@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ExternalLink, Github } from 'lucide-react';
+import { Github } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -12,7 +12,6 @@ const projects = [
     description: 'Sistema de microserviços desenvolvido com Spring Boot e Kotlin',
     category: 'backend',
     image: 'bg-primary/20 dark:bg-blue-900/30',
-    demoLink: '#',
     repoLink: '#'
   },
   {
@@ -21,16 +20,14 @@ const projects = [
     description: 'Implementação de autenticação segura com JWT e OAuth2',
     category: 'backend',
     image: 'bg-secondary/20 dark:bg-blue-800/30',
-    demoLink: '#',
     repoLink: '#'
   },
   {
     id: 3,
     title: 'Biblioteca de Utilidades',
     description: 'Coleção de extensões e funções de utilidade em Kotlin',
-    category: 'library',
+    category: 'frontend',
     image: 'bg-muted dark:bg-gray-800',
-    demoLink: '#',
     repoLink: '#'
   },
   {
@@ -39,25 +36,22 @@ const projects = [
     description: 'Sistema de processamento de pagamentos com Java e Spring',
     category: 'backend',
     image: 'bg-primary/10 dark:bg-blue-900/20',
-    demoLink: '#',
     repoLink: '#'
   },
   {
     id: 5,
     title: 'Framework de Testes',
     description: 'Framework para testes de integração e unitários em Java',
-    category: 'library',
+    category: 'frontend',
     image: 'bg-secondary/10 dark:bg-blue-800/20',
-    demoLink: '#',
     repoLink: '#'
   },
   {
     id: 6,
     title: 'CLI para DevOps',
     description: 'Ferramenta de linha de comando para automação de tarefas DevOps',
-    category: 'tool',
+    category: 'backend',
     image: 'bg-muted/80 dark:bg-gray-700',
-    demoLink: '#',
     repoLink: '#'
   }
 ];
@@ -75,12 +69,8 @@ const ProjectCard = ({ project }: { project: typeof projects[0] }) => {
       <CardContent>
         <p className="text-muted-foreground dark:text-gray-300">{project.description}</p>
       </CardContent>
-      <CardFooter className="gap-2">
-        <Button variant="outline" size="sm" className="flex-1 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-700">
-          <ExternalLink className="mr-2 h-4 w-4" />
-          Demo
-        </Button>
-        <Button variant="outline" size="sm" className="flex-1 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-700">
+      <CardFooter>
+        <Button variant="outline" size="sm" className="w-full dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-700">
           <Github className="mr-2 h-4 w-4" />
           Código
         </Button>
@@ -101,9 +91,8 @@ const ProjectsSection = () => {
           <div className="flex justify-center mb-12">
             <TabsList className="dark:bg-gray-800">
               <TabsTrigger value="all" className="dark:data-[state=active]:bg-blue-600 dark:data-[state=active]:text-white">Todos</TabsTrigger>
-              <TabsTrigger value="backend" className="dark:data-[state=active]:bg-blue-600 dark:data-[state=active]:text-white">Backend</TabsTrigger>
-              <TabsTrigger value="library" className="dark:data-[state=active]:bg-blue-600 dark:data-[state=active]:text-white">Bibliotecas</TabsTrigger>
-              <TabsTrigger value="tool" className="dark:data-[state=active]:bg-blue-600 dark:data-[state=active]:text-white">Ferramentas</TabsTrigger>
+              <TabsTrigger value="frontend" className="dark:data-[state=active]:bg-blue-600 dark:data-[state=active]:text-white">Front-end</TabsTrigger>
+              <TabsTrigger value="backend" className="dark:data-[state=active]:bg-blue-600 dark:data-[state=active]:text-white">Back-end</TabsTrigger>
             </TabsList>
           </div>
           
@@ -115,25 +104,17 @@ const ProjectsSection = () => {
             </div>
           </TabsContent>
           
+          <TabsContent value="frontend" className="mt-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {projects.filter(p => p.category === 'frontend').map(project => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
+            </div>
+          </TabsContent>
+          
           <TabsContent value="backend" className="mt-0">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {projects.filter(p => p.category === 'backend').map(project => (
-                <ProjectCard key={project.id} project={project} />
-              ))}
-            </div>
-          </TabsContent>
-          
-          <TabsContent value="library" className="mt-0">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {projects.filter(p => p.category === 'library').map(project => (
-                <ProjectCard key={project.id} project={project} />
-              ))}
-            </div>
-          </TabsContent>
-          
-          <TabsContent value="tool" className="mt-0">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {projects.filter(p => p.category === 'tool').map(project => (
                 <ProjectCard key={project.id} project={project} />
               ))}
             </div>

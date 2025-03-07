@@ -8,66 +8,55 @@ const skillCategories = [
     title: 'Backend',
     icon: <Server className="h-8 w-8 text-primary dark:text-blue-400" />,
     skills: [
-      { name: 'Java', proficiency: 90, logo: <Coffee className="h-10 w-10" /> },
-      { name: 'Kotlin', proficiency: 85, logo: <Code className="h-10 w-10" /> },
-      { name: 'Spring Boot', proficiency: 85, logo: <Server className="h-10 w-10" /> },
-      { name: 'Hibernate', proficiency: 80, logo: <Database className="h-10 w-10" /> },
-      { name: 'Maven', proficiency: 85, logo: <Code className="h-10 w-10" /> }
+      { name: 'Java', logo: <Coffee className="h-10 w-10" /> },
+      { name: 'Kotlin', logo: <Code className="h-10 w-10" /> },
+      { name: 'Spring Boot', logo: <Server className="h-10 w-10" /> },
+      { name: 'Hibernate', logo: <Database className="h-10 w-10" /> },
+      { name: 'Maven', logo: <Code className="h-10 w-10" /> }
     ]
   },
   {
     title: 'Banco de Dados',
     icon: <Database className="h-8 w-8 text-primary dark:text-blue-400" />,
     skills: [
-      { name: 'PostgreSQL', proficiency: 85, logo: <Database className="h-10 w-10" /> },
-      { name: 'MySQL', proficiency: 80, logo: <Database className="h-10 w-10" /> },
-      { name: 'MongoDB', proficiency: 75, logo: <Database className="h-10 w-10" /> },
-      { name: 'Redis', proficiency: 70, logo: <Database className="h-10 w-10" /> },
-      { name: 'Oracle', proficiency: 75, logo: <Database className="h-10 w-10" /> }
+      { name: 'PostgreSQL', logo: <Database className="h-10 w-10" /> },
+      { name: 'MySQL', logo: <Database className="h-10 w-10" /> },
+      { name: 'MongoDB', logo: <Database className="h-10 w-10" /> },
+      { name: 'Redis', logo: <Database className="h-10 w-10" /> },
+      { name: 'Oracle', logo: <Database className="h-10 w-10" /> }
     ]
   },
   {
     title: 'Ferramentas',
     icon: <Code className="h-8 w-8 text-primary dark:text-blue-400" />,
     skills: [
-      { name: 'Git/GitHub', proficiency: 90, logo: <Code className="h-10 w-10" /> },
-      { name: 'Docker', proficiency: 85, logo: <Code className="h-10 w-10" /> },
-      { name: 'Kubernetes', proficiency: 75, logo: <Code className="h-10 w-10" /> },
-      { name: 'CI/CD', proficiency: 80, logo: <Code className="h-10 w-10" /> },
-      { name: 'IntelliJ IDEA', proficiency: 90, logo: <Code className="h-10 w-10" /> }
+      { name: 'Git/GitHub', logo: <Code className="h-10 w-10" /> },
+      { name: 'Docker', logo: <Code className="h-10 w-10" /> },
+      { name: 'Kubernetes', logo: <Code className="h-10 w-10" /> },
+      { name: 'CI/CD', logo: <Code className="h-10 w-10" /> },
+      { name: 'IntelliJ IDEA', logo: <Code className="h-10 w-10" /> }
     ]
   },
   {
     title: 'Outros',
     icon: <Server className="h-8 w-8 text-primary dark:text-blue-400" />,
     skills: [
-      { name: 'Microservices', proficiency: 85, logo: <Server className="h-10 w-10" /> },
-      { name: 'REST APIs', proficiency: 90, logo: <Code className="h-10 w-10" /> },
-      { name: 'Testes Unitários', proficiency: 85, logo: <Code className="h-10 w-10" /> },
-      { name: 'Segurança', proficiency: 80, logo: <Code className="h-10 w-10" /> },
-      { name: 'Clean Code', proficiency: 90, logo: <Code className="h-10 w-10" /> }
+      { name: 'Microservices', logo: <Server className="h-10 w-10" /> },
+      { name: 'REST APIs', logo: <Code className="h-10 w-10" /> },
+      { name: 'Testes Unitários', logo: <Code className="h-10 w-10" /> },
+      { name: 'Segurança', logo: <Code className="h-10 w-10" /> },
+      { name: 'Clean Code', logo: <Code className="h-10 w-10" /> }
     ]
   }
 ];
 
-const SkillBar = ({ name, proficiency, logo }: { name: string; proficiency: number; logo: React.ReactNode }) => {
+const SkillItem = ({ name, logo }: { name: string; logo: React.ReactNode }) => {
   return (
-    <div className="mb-4">
-      <div className="flex justify-between items-center mb-1">
-        <div className="flex items-center gap-2">
-          <div className="flex items-center justify-center w-12 h-12 bg-gray-100 dark:bg-gray-700 rounded-md">
-            {logo}
-          </div>
-          <span className="ml-2 dark:text-gray-200">{name}</span>
-        </div>
-        <span className="dark:text-gray-300">{proficiency}%</span>
+    <div className="flex flex-col items-center">
+      <div className="flex items-center justify-center w-16 h-16 bg-gray-100 dark:bg-gray-700 rounded-md mb-2 transition-all hover:scale-110">
+        {logo}
       </div>
-      <div className="w-full bg-muted dark:bg-gray-700 rounded-full h-2.5 mt-2">
-        <div 
-          className="bg-primary dark:bg-blue-500 h-2.5 rounded-full transition-all duration-1000 ease-out" 
-          style={{ width: `${proficiency}%` }} 
-        />
-      </div>
+      <span className="text-sm dark:text-gray-200">{name}</span>
     </div>
   );
 };
@@ -80,9 +69,11 @@ const SkillCategory = ({ category }: { category: typeof skillCategories[0] }) =>
         <h3 className="text-xl font-bold dark:text-white">{category.title}</h3>
       </div>
       <CardContent>
-        {category.skills.map((skill, index) => (
-          <SkillBar key={index} name={skill.name} proficiency={skill.proficiency} logo={skill.logo} />
-        ))}
+        <div className="grid grid-cols-3 md:grid-cols-5 gap-4">
+          {category.skills.map((skill, index) => (
+            <SkillItem key={index} name={skill.name} logo={skill.logo} />
+          ))}
+        </div>
       </CardContent>
     </Card>
   );

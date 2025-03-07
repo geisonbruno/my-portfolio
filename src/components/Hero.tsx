@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
@@ -9,6 +9,11 @@ const Hero = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const openWhatsApp = () => {
+    // Substitua pelo seu número real
+    window.open('https://wa.me/+5500000000000', '_blank');
   };
 
   return (
@@ -20,14 +25,23 @@ const Hero = () => {
         <p className="text-xl text-muted-foreground dark:text-gray-300 animate-fade-in" style={{ animationDelay: "0.2s" }}>
           Transformando ideias em soluções robustas e escaláveis
         </p>
-        <Button
-          onClick={scrollToAbout}
-          className="mt-8 animate-fade-in group dark:bg-blue-600 dark:hover:bg-blue-700"
-          style={{ animationDelay: "0.4s" }}
-        >
-          Conheça meu trabalho
-          <ArrowDown className="ml-2 h-4 w-4 transition-transform group-hover:translate-y-1" />
-        </Button>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 animate-fade-in" style={{ animationDelay: "0.4s" }}>
+          <Button
+            onClick={scrollToAbout}
+            className="group dark:bg-blue-600 dark:hover:bg-blue-700 w-full sm:w-auto"
+          >
+            Conheça meu trabalho
+            <ArrowDown className="ml-2 h-4 w-4 transition-transform group-hover:translate-y-1" />
+          </Button>
+          <Button
+            onClick={openWhatsApp}
+            variant="outline"
+            className="group dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-600 dark:hover:text-white w-full sm:w-auto"
+          >
+            Fale comigo
+            <Phone className="ml-2 h-4 w-4 transition-transform group-hover:rotate-12" />
+          </Button>
+        </div>
       </div>
       <div className="absolute bottom-10 w-full flex justify-center animate-bounce">
         <ArrowDown className="h-6 w-6 text-primary dark:text-blue-400" />
