@@ -32,11 +32,11 @@ const experiences = [
 
 const ExperienceCard = ({ experience }: { experience: typeof experiences[0] }) => {
   return (
-    <Card className="mb-6 border-l-4 border-l-primary dark:border-l-blue-500 dark:bg-gray-800 dark:border-gray-700">
-      <CardContent className="p-6">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+    <Card className="mb-5 sm:mb-6 border-l-4 border-l-primary dark:border-l-blue-500 dark:bg-gray-800 dark:border-gray-700">
+      <CardContent className="p-4 sm:p-6">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3 sm:mb-4">
           <div>
-            <h3 className="text-xl font-bold dark:text-white">{experience.title}</h3>
+            <h3 className="text-lg sm:text-xl font-bold dark:text-white">{experience.title}</h3>
             <div className="flex items-center text-muted-foreground dark:text-gray-400 mt-1">
               <Building className="h-4 w-4 mr-2" />
               {experience.company}
@@ -44,10 +44,10 @@ const ExperienceCard = ({ experience }: { experience: typeof experiences[0] }) =
           </div>
           <div className="flex items-center mt-2 md:mt-0">
             <Calendar className="h-4 w-4 mr-2 text-primary dark:text-blue-400" />
-            <span className="text-sm dark:text-gray-300">{experience.period}</span>
+            <span className="text-xs sm:text-sm dark:text-gray-300">{experience.period}</span>
           </div>
         </div>
-        <p className="text-muted-foreground dark:text-gray-300">{experience.description}</p>
+        <p className="text-xs sm:text-sm text-muted-foreground dark:text-gray-300">{experience.description}</p>
       </CardContent>
     </Card>
   );
@@ -55,21 +55,21 @@ const ExperienceCard = ({ experience }: { experience: typeof experiences[0] }) =
 
 const ExperienceSection = () => {
   return (
-    <section id="experience" className="py-20 min-h-screen dark:bg-gray-900">
+    <section id="experience" className="py-16 sm:py-20 min-h-screen dark:bg-gray-900">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center dark:text-white">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-10 sm:mb-16 text-center dark:text-white">
           Minha <span className="text-primary dark:text-blue-400">Experiência</span>
         </h2>
         
         <div className="max-w-3xl mx-auto">
-          <div className="flex items-center mb-8">
-            <div className="p-4 rounded-full bg-primary/10 dark:bg-blue-900/20 mr-4">
-              <Briefcase className="h-6 w-6 text-primary dark:text-blue-400" />
+          <div className="flex items-center mb-6 sm:mb-8">
+            <div className="p-3 sm:p-4 rounded-full bg-primary/10 dark:bg-blue-900/20 mr-3 sm:mr-4">
+              <Briefcase className="h-5 w-5 sm:h-6 sm:w-6 text-primary dark:text-blue-400" />
             </div>
-            <h3 className="text-2xl font-bold dark:text-white">Experiência Profissional</h3>
+            <h3 className="text-xl sm:text-2xl font-bold dark:text-white">Experiência Profissional</h3>
           </div>
           
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {experiences.map((experience, index) => (
               <ExperienceCard key={index} experience={experience} />
             ))}

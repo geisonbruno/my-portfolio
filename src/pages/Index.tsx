@@ -12,12 +12,20 @@ import { Moon, Sun } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Index = () => {
-  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('theme') as 'light' | 'dark' || 'dark';
+  // Iniciando com o tema escuro como padrão
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+
+  useEffect(() => {
+    // Verifica se há uma preferência salva
+    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark';
+    // Se houver uma preferência salva, use-a, caso contrário mantenha o padrão (dark)
+    if (savedTheme) {
+      setTheme(savedTheme);
+    } else {
+      // Se não houver preferência, defina como escuro e salve
+      localStorage.setItem('theme', 'dark');
     }
-    return 'dark';
-  });
+  }, []);
 
   useEffect(() => {
     const root = window.document.documentElement;
