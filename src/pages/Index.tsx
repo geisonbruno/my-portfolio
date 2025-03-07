@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import AboutSection from '../components/AboutSection';
@@ -8,8 +8,32 @@ import SkillsSection from '../components/SkillsSection';
 import ExperienceSection from '../components/ExperienceSection';
 import SocialSection from '../components/SocialSection';
 import Footer from '../components/Footer';
+import { Moon, Sun } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const Index = () => {
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('theme') as 'light' | 'dark' || 'light';
+    }
+    return 'light';
+  });
+
+  useEffect(() => {
+    const root = window.document.documentElement;
+    if (theme === 'dark') {
+      root.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      root.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
+
   // Efeito de animação para as seções ao rolar
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -36,13 +60,27 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen dark:bg-gray-900 dark:text-white transition-colors duration-300">
+      <div className="fixed right-4 top-20 z-50">
+        <Button 
+          variant="outline" 
+          size="icon" 
+          className="rounded-full w-10 h-10 dark:bg-gray-800 dark:text-white"
+          onClick={toggleTheme}
+        >
+          {theme === 'light' ? (
+            <Moon className="h-5 w-5" />
+          ) : (
+            <Sun className="h-5 w-5" />
+          )}
+        </Button>
+      </div>
       <Header />
       <Hero />
       <AboutSection />
+      <ExperienceSection />
       <ProjectsSection />
       <SkillsSection />
-      <ExperienceSection />
       <SocialSection />
       <Footer />
     </div>
