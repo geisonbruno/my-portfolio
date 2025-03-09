@@ -10,24 +10,32 @@ const AboutSection = () => {
       className="py-16 sm:py-20 min-h-screen flex items-center dark:bg-gray-900"
     >
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-10 sm:mb-16 text-center">
-          About <span className="text-primary dark:text-blue-400">Me</span>
-        </h2>
-
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+          {" "}
+          {/* Altera de items-center para items-start */}
+          {/* Coluna da esquerda (Imagem) */}
           <div>
-            <div className="relative mx-auto max-w-xs sm:max-w-sm md:max-w-none">
-              <div className="w-full aspect-square bg-muted dark:bg-gray-800 rounded-lg overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 mix-blend-overlay"></div>
-                {/* Placeholder para imagem de perfil */}
-                <div className="w-full h-full flex items-center justify-center text-muted-foreground dark:text-gray-400">
-                  <User size={60} />
-                </div>
+            <div className="relative mx-auto max-w-[300px] sm:max-w-[450px] md:max-w-[500px]">
+              <div
+                className="w-full aspect-square bg-muted dark:bg-gray-800 rounded-lg overflow-hidden 
+                border-[2px] border-white dark:border-gray-600 shadow-lg shadow-blue-100/50"
+              >
+                <div className="absolute inset-0 from-primary/10 to-secondary/20 mix-blend-overlay"></div>
+                <img
+                  src="/src/img/eu.png"
+                  alt="Minha Foto"
+                  className="w-full h-full object-cover scale-120"
+                />
               </div>
             </div>
           </div>
+          {/* Coluna da direita (Texto) */}
+          <div className="flex flex-col space-y-4 sm:space-y-6">
+            {/* Aqui está o título alinhado com o conteúdo */}
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 self-start">
+              About <span className="text-primary dark:text-blue-400">Me</span>
+            </h2>
 
-          <div className="space-y-4 sm:space-y-6">
             <h3 className="text-xl sm:text-2xl font-bold dark:text-white">
               Software Developer
             </h3>

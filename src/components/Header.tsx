@@ -26,7 +26,7 @@ const Header = () => {
             <li>
               <button
                 onClick={() => scrollToSection("home")}
-                className="text-foreground dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors"
+                className="text-foreground font-bold dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors"
               >
                 Home
               </button>
@@ -34,7 +34,7 @@ const Header = () => {
             <li>
               <button
                 onClick={() => scrollToSection("sobre")}
-                className="text-foreground dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors"
+                className="text-foreground font-bold dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors"
               >
                 About me
               </button>
@@ -42,7 +42,7 @@ const Header = () => {
             <li>
               <button
                 onClick={() => scrollToSection("experience")}
-                className="text-foreground dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors"
+                className="text-foreground font-bold dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors"
               >
                 Experiences
               </button>
@@ -50,7 +50,7 @@ const Header = () => {
             <li>
               <button
                 onClick={() => scrollToSection("projetos")}
-                className="text-foreground dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors"
+                className="text-foreground font-bold dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors"
               >
                 Projetcs
               </button>
@@ -58,7 +58,7 @@ const Header = () => {
             <li>
               <button
                 onClick={() => scrollToSection("skills")}
-                className="text-foreground dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors"
+                className="text-foreground font-bold dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors"
               >
                 Skills
               </button>
@@ -66,7 +66,7 @@ const Header = () => {
             <li>
               <button
                 onClick={() => scrollToSection("social")}
-                className="text-foreground dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors"
+                className="text-foreground font-bold dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors"
               >
                 Social
               </button>

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   const scrollToAbout = () => {
-    const element = document.getElementById("sobre");
+    const element = document.getElementById("about");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
