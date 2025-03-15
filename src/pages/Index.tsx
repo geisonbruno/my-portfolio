@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
-import Hero from '../components/Hero';
+import Hero from '../components/Home';
 import AboutSection from '../components/AboutSection';
 import ProjectsSection from '../components/ProjectsSection';
 import SkillsSection from '../components/SkillsSection';

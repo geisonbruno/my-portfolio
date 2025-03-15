@@ -26,7 +26,7 @@ const Header = () => {
             <li>
               <button
                 onClick={() => scrollToSection("home")}
-                className="text-foreground font-bold dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors"
+                className="text-foreground font-bold dark:text-gray-300 hover:text-primary dark:hover:text-orange-500 transition-colors"
               >
                 Home
               </button>
@@ -34,7 +34,7 @@ const Header = () => {
             <li>
               <button
                 onClick={() => scrollToSection("sobre")}
-                className="text-foreground font-bold dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors"
+                className="text-foreground font-bold dark:text-gray-300 hover:text-primary dark:hover:text-orange-500 transition-colors"
               >
                 About me
               </button>
@@ -42,7 +42,7 @@ const Header = () => {
             <li>
               <button
                 onClick={() => scrollToSection("experience")}
-                className="text-foreground font-bold dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors"
+                className="text-foreground font-bold dark:text-gray-300 hover:text-primary dark:hover:text-orange-500 transition-colors"
               >
                 Experiences
               </button>
@@ -50,7 +50,7 @@ const Header = () => {
             <li>
               <button
                 onClick={() => scrollToSection("projetos")}
-                className="text-foreground font-bold dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors"
+                className="text-foreground font-bold dark:text-gray-300 hover:text-primary dark:hover:text-orange-500 transition-colors"
               >
                 Projetcs
               </button>
@@ -58,7 +58,7 @@ const Header = () => {
             <li>
               <button
                 onClick={() => scrollToSection("skills")}
-                className="text-foreground font-bold dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors"
+                className="text-foreground font-bold dark:text-gray-300 hover:text-primary dark:hover:text-orange-500 transition-colors"
               >
                 Skills
               </button>
@@ -66,7 +66,7 @@ const Header = () => {
             <li>
               <button
                 onClick={() => scrollToSection("social")}
-                className="text-foreground font-bold dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors"
+                className="text-foreground font-bold dark:text-gray-300 hover:text-primary dark:hover:text-orange-500 transition-colors"
               >
                 Social
               </button>
@@ -93,11 +93,11 @@ const Header = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-background dark:bg-gray-900 py-4 px-4 border-b dark:border-gray-800">
           <nav>
-            <ul className="flex flex-col space-y-4">
+            <ul className="flex flex-col items-center space-y-4">
               <li>
                 <button
                   onClick={() => scrollToSection("home")}
-                  className="w-full text-left text-foreground dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors"
+                  className="w-full text-left text-foreground dark:text-gray-300 hover:text-primary dark:hover:text-orange-500 transition-colors"
                 >
                   Home
                 </button>
@@ -105,7 +105,7 @@ const Header = () => {
               <li>
                 <button
                   onClick={() => scrollToSection("sobre")}
-                  className="w-full text-left text-foreground dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors"
+                  className="w-full text-left text-foreground dark:text-gray-300 hover:text-primary dark:hover:text-orange-500 transition-colors"
                 >
                   Sobre
                 </button>
@@ -113,7 +113,7 @@ const Header = () => {
               <li>
                 <button
                   onClick={() => scrollToSection("experience")}
-                  className="w-full text-left text-foreground dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors"
+                  className="w-full text-left text-foreground dark:text-gray-300 hover:text-primary dark:hover:text-orange-500 transition-colors"
                 >
                   Experiência
                 </button>
@@ -121,7 +121,7 @@ const Header = () => {
               <li>
                 <button
                   onClick={() => scrollToSection("projetos")}
-                  className="w-full text-left text-foreground dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors"
+                  className="w-full text-left text-foreground dark:text-gray-300 hover:text-primary dark:hover:text-orange-500 transition-colors"
                 >
                   Projetos
                 </button>
@@ -129,7 +129,7 @@ const Header = () => {
               <li>
                 <button
                   onClick={() => scrollToSection("skills")}
-                  className="w-full text-left text-foreground dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors"
+                  className="w-full text-left text-foreground dark:text-gray-300 hover:text-primary dark:hover:text-orange-500 transition-colors"
                 >
                   Skills
                 </button>
@@ -137,7 +137,7 @@ const Header = () => {
               <li>
                 <button
                   onClick={() => scrollToSection("social")}
-                  className="w-full text-left text-foreground dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors"
+                  className="w-full text-left text-foreground dark:text-gray-300 hover:text-primary dark:hover:text-orange-500 transition-colors"
                 >
                   Social
                 </button>

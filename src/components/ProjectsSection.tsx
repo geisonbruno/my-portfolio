@@ -18,7 +18,7 @@ const projects = [
     description:
       "Sistema de microserviços desenvolvido com Spring Boot e Kotlin",
     category: "backend",
-    image: "bg-primary/20 dark:bg-blue-900/30",
+    image: "bg-primary/20 dark:bg-orange-900/30",
     repoLink: "#",
   },
   {
@@ -26,7 +26,7 @@ const projects = [
     title: "Sistema de Autenticação",
     description: "Implementação de autenticação segura com JWT e OAuth2",
     category: "backend",
-    image: "bg-secondary/20 dark:bg-blue-800/30",
+    image: "bg-secondary/20 dark:bg-orange-800/30",
     repoLink: "#",
   },
   {
@@ -42,7 +42,7 @@ const projects = [
     title: "API REST de Pagamentos",
     description: "Sistema de processamento de pagamentos com Java e Spring",
     category: "backend",
-    image: "bg-primary/10 dark:bg-blue-900/20",
+    image: "bg-primary/10 dark:bg-orange-900/20",
     repoLink: "#",
   },
   {
@@ -50,7 +50,7 @@ const projects = [
     title: "Framework de Testes",
     description: "Framework para testes de integração e unitários em Java",
     category: "frontend",
-    image: "bg-secondary/10 dark:bg-blue-800/20",
+    image: "bg-secondary/10 dark:bg-orange-800/20",
     repoLink: "#",
   },
   {
@@ -66,11 +66,11 @@ const projects = [
 
 const ProjectCard = ({ project }: { project: (typeof projects)[0] }) => {
   return (
-    <Card className="overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1 dark:bg-gray-800 dark:border-gray-700">
+    <Card className="overflow-hidden transition-all hover:shadow-lg hover:-translate-y-2 dark:bg-gray-800 dark:border-gray-700 shadow-lg">
       <div
         className={`h-36 sm:h-48 ${project.image} flex items-center justify-center`}
       >
-        <span className="text-2xl sm:text-3xl font-bold text-primary/40 dark:text-blue-400/40">
+        <span className="text-2xl sm:text-3xl font-bold text-primary/40 dark:text-orange-500/40">
           {project.id}
         </span>
       </div>
@@ -110,27 +110,41 @@ const ProjectsSection = () => {
       <div className="container mx-auto px-4">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-10 sm:mb-16 text-center dark:text-white">
           Latest{" "}
-          <span className="text-primary dark:text-blue-400">Projects</span>
+          <span className="text-orange-500 dark:text-orange-500 light:text-orange-500">
+            Projects
+          </span>
         </h2>
 
         <Tabs defaultValue="all" className="w-full">
           <div className="flex justify-center mb-8 sm:mb-12">
-            <TabsList className="dark:bg-gray-800">
+            <TabsList className="dark:bg-gray-800 bg-gray-200">
               <TabsTrigger
                 value="all"
-                className="text-xs sm:text-sm dark:data-[state=active]:bg-blue-600 dark:data-[state=active]:text-white"
+                className="text-xs sm:text-sm 
+                   data-[state=active]:bg-orange-500 
+                   data-[state=active]:text-white 
+                   dark:data-[state=active]:bg-orange-500 
+                   dark:data-[state=active]:text-white"
               >
                 All
               </TabsTrigger>
               <TabsTrigger
                 value="frontend"
-                className="text-xs sm:text-sm dark:data-[state=active]:bg-blue-600 dark:data-[state=active]:text-white"
+                className="text-xs sm:text-sm 
+                   data-[state=active]:bg-orange-500 
+                   data-[state=active]:text-white 
+                   dark:data-[state=active]:bg-orange-500 
+                   dark:data-[state=active]:text-white"
               >
                 Front-end
               </TabsTrigger>
               <TabsTrigger
                 value="backend"
-                className="text-xs sm:text-sm dark:data-[state=active]:bg-blue-600 dark:data-[state=active]:text-white"
+                className="text-xs sm:text-sm 
+                   data-[state=active]:bg-orange-500 
+                   data-[state=active]:text-white 
+                   dark:data-[state=active]:bg-orange-500 
+                   dark:data-[state=active]:text-white"
               >
                 Back-end
               </TabsTrigger>

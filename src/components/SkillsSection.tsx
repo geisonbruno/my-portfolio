@@ -25,7 +25,7 @@ import { Card, CardContent } from "@/components/ui/card";
 const skillCategories = [
   {
     title: "Languages & Frameworks",
-    icon: <Code className="h-8 w-8 text-primary dark:text-blue-400" />,
+    icon: <Code className="h-8 w-8 text-orange-500 dark:text-orange-500 " />,
     skills: [
       {
         name: "Java",
@@ -49,7 +49,9 @@ const skillCategories = [
   },
   {
     title: "Database",
-    icon: <Database className="h-8 w-8 text-primary dark:text-blue-400" />,
+    icon: (
+      <Database className="h-8 w-8 text-orange-500 dark:text-orange-500 " />
+    ),
     skills: [
       { name: "MySQL", logo: <SiMysql className="h-6 w-6 sm:h-8 sm:w-8" /> },
       {
@@ -64,7 +66,7 @@ const skillCategories = [
   },
   {
     title: "Tools",
-    icon: <Server className="h-8 w-8 text-primary dark:text-blue-400" />,
+    icon: <Server className="h-8 w-8 text-orange-500 dark:text-orange-500" />,
     skills: [
       {
         name: "AWS (SES)",
@@ -89,7 +91,7 @@ const skillCategories = [
   },
   {
     title: "Others",
-    icon: <Server className="h-8 w-8 text-primary dark:text-blue-400" />, // Mantém ícone da categoria
+    icon: <Server className="h-8 w-8 text-orange-500 dark:text-orange-500" />, // Mantém ícone da categoria
     skills: [
       {
         name: "Microservices",
@@ -114,11 +116,11 @@ const skillCategories = [
 
 const SkillItem = ({ name, logo }: { name: string; logo: React.ReactNode }) => {
   return (
-    <div className="flex flex-col items-center">
-      <div className="flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gray-100 dark:bg-gray-700 rounded-md mb-2 transition-all hover:scale-110">
+    <div className="flex flex-col items-center ">
+      <div className="flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gray-100 dark:bg-gray-700 rounded-md mb-2 transition-all hover:scale-110 ">
         {logo}
       </div>
-      <span className="text-xs sm:text-sm dark:text-gray-200">{name}</span>
+      <span className="text-xs sm:text-sm dark:text-gray-200 ">{name}</span>
     </div>
   );
 };
@@ -129,7 +131,7 @@ const SkillCategory = ({
   category: (typeof skillCategories)[0];
 }) => {
   return (
-    <Card className="dark:bg-gray-800 dark:border-gray-700">
+    <Card className="dark:bg-gray-800 dark:border-gray-700 shadow-lg">
       <div className="flex items-center justify-between p-4 sm:p-6 pb-2 space-y-0">
         {category.icon}
         <h3 className="text-lg sm:text-xl font-bold dark:text-white">
@@ -155,7 +157,8 @@ const SkillsSection = () => {
     >
       <div className="container mx-auto px-4">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-10 sm:mb-16 text-center dark:text-white">
-          My <span className="text-primary dark:text-blue-400">Skills</span>
+          My{" "}
+          <span className="text-orange-500 dark:text-orange-500">Skills</span>
         </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
