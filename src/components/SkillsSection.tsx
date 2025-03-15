@@ -1,74 +1,112 @@
 import React from "react";
-import { Code, Database, Server, Coffee } from "lucide-react";
+import { Code, Database, Server } from "lucide-react";
+import {
+  SiCoffeescript,
+  SiKotlin,
+  SiSpringboot,
+  SiReact,
+  SiJavascript,
+  SiHibernate,
+  SiMysql,
+  SiPostgresql,
+  SiMongodb,
+  SiAmazonsimpleemailservice,
+  SiGradle,
+  SiApachemaven,
+  SiLinux,
+  SiGoogleplay,
+  SiFigma,
+  SiJunit5,
+  SiHackthebox,
+  SiGithubactions,
+} from "react-icons/si";
 import { Card, CardContent } from "@/components/ui/card";
 
 const skillCategories = [
   {
-    title: "Backend",
-    icon: <Server className="h-8 w-8 text-primary dark:text-blue-400" />,
+    title: "Languages & Frameworks",
+    icon: <Code className="h-8 w-8 text-primary dark:text-blue-400" />,
     skills: [
-      { name: "Java", logo: <Coffee className="h-6 w-6 sm:h-8 sm:w-8" /> },
-      { name: "Kotlin", logo: <Code className="h-6 w-6 sm:h-8 sm:w-8" /> },
+      {
+        name: "Java",
+        logo: <SiCoffeescript className="h-6 w-6 sm:h-8 sm:w-8" />,
+      },
+      { name: "Kotlin", logo: <SiKotlin className="h-6 w-6 sm:h-8 sm:w-8" /> },
       {
         name: "Spring Boot",
-        logo: <Server className="h-6 w-6 sm:h-8 sm:w-8" />,
+        logo: <SiSpringboot className="h-6 w-6 sm:h-8 sm:w-8" />,
+      },
+      { name: "React.js", logo: <SiReact className="h-6 w-6 sm:h-8 sm:w-8" /> },
+      {
+        name: "JavaScript",
+        logo: <SiJavascript className="h-6 w-6 sm:h-8 sm:w-8" />,
       },
       {
         name: "Hibernate",
-        logo: <Database className="h-6 w-6 sm:h-8 sm:w-8" />,
+        logo: <SiHibernate className="h-6 w-6 sm:h-8 sm:w-8" />,
       },
-      { name: "Maven", logo: <Code className="h-6 w-6 sm:h-8 sm:w-8" /> },
     ],
   },
   {
     title: "Database",
     icon: <Database className="h-8 w-8 text-primary dark:text-blue-400" />,
     skills: [
+      { name: "MySQL", logo: <SiMysql className="h-6 w-6 sm:h-8 sm:w-8" /> },
       {
         name: "PostgreSQL",
-        logo: <Database className="h-6 w-6 sm:h-8 sm:w-8" />,
+        logo: <SiPostgresql className="h-6 w-6 sm:h-8 sm:w-8" />,
       },
-      { name: "MySQL", logo: <Database className="h-6 w-6 sm:h-8 sm:w-8" /> },
-      { name: "MongoDB", logo: <Database className="h-6 w-6 sm:h-8 sm:w-8" /> },
-      { name: "Redis", logo: <Database className="h-6 w-6 sm:h-8 sm:w-8" /> },
-      { name: "NoSQL", logo: <Database className="h-6 w-6 sm:h-8 sm:w-8" /> },
-      // { name: 'Oracle', logo: <Database className="h-6 w-6 sm:h-8 sm:w-8" /> }
+      {
+        name: "MongoDB",
+        logo: <SiMongodb className="h-6 w-6 sm:h-8 sm:w-8" />,
+      },
     ],
   },
   {
     title: "Tools",
-    icon: <Code className="h-8 w-8 text-primary dark:text-blue-400" />,
+    icon: <Server className="h-8 w-8 text-primary dark:text-blue-400" />,
     skills: [
-      { name: "Git/GitHub", logo: <Code className="h-6 w-6 sm:h-8 sm:w-8" /> },
-      { name: "Docker", logo: <Code className="h-6 w-6 sm:h-8 sm:w-8" /> },
-      { name: "Firebase", logo: <Code className="h-6 w-6 sm:h-8 sm:w-8" /> },
-      { name: "CI/CD", logo: <Code className="h-6 w-6 sm:h-8 sm:w-8" /> },
       {
-        name: "Google play",
-        logo: <Code className="h-6 w-6 sm:h-8 sm:w-8" />,
+        name: "AWS (SES)",
+        logo: <SiAmazonsimpleemailservice className="h-6 w-6 sm:h-8 sm:w-8" />,
       },
+      { name: "Gradle", logo: <SiGradle className="h-6 w-6 sm:h-8 sm:w-8" /> },
+      {
+        name: "Maven",
+        logo: <SiApachemaven className="h-6 w-6 sm:h-8 sm:w-8" />,
+      },
+      {
+        name: "CI/CD",
+        logo: <SiGithubactions className="h-6 w-6 sm:h-8 sm:w-8" />,
+      },
+      { name: "Linux", logo: <SiLinux className="h-6 w-6 sm:h-8 sm:w-8" /> },
+      {
+        name: "Google Play",
+        logo: <SiGoogleplay className="h-6 w-6 sm:h-8 sm:w-8" />,
+      },
+      { name: "Figma", logo: <SiFigma className="h-6 w-6 sm:h-8 sm:w-8" /> },
     ],
   },
   {
     title: "Others",
-    icon: <Server className="h-8 w-8 text-primary dark:text-blue-400" />,
+    icon: <Server className="h-8 w-8 text-primary dark:text-blue-400" />, // Mantém ícone da categoria
     skills: [
       {
         name: "Microservices",
-        logo: <Server className="h-6 w-6 sm:h-8 sm:w-8" />,
+        logo: <SiHackthebox className="h-6 w-6 sm:h-8 sm:w-8" />,
       },
       {
         name: "Agile Frameworks (Scrum)",
-        logo: <Code className="h-6 w-6 sm:h-8 sm:w-8" />,
+        logo: <Server className="h-6 w-6 sm:h-8 sm:w-8" />,
       },
       {
-        name: "Testes Unitários",
-        logo: <Code className="h-6 w-6 sm:h-8 sm:w-8" />,
+        name: "JUnit 5",
+        logo: <SiJunit5 className="h-6 w-6 sm:h-8 sm:w-8" />,
       },
       { name: "SOLID", logo: <Code className="h-6 w-6 sm:h-8 sm:w-8" /> },
       {
         name: "Design Patterns",
-        logo: <Code className="h-6 w-6 sm:h-8 sm:w-8" />,
+        logo: <Server className="h-6 w-6 sm:h-8 sm:w-8" />,
       },
     ],
   },
