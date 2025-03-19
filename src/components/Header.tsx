@@ -91,7 +91,7 @@ const Header = () => {
 
       {/* Menu mobile */}
       {isMenuOpen && (
-        <div className="md:hidden bg-background dark:bg-gray-900 py-4 px-4 border-b dark:border-gray-800">
+        <div className="md:hidden bg-background dark:bg-gray-900 py-4 px-4 border-b dark:border-gray-800 font-bold">
           <nav>
             <ul className="flex flex-col items-center space-y-4">
               <li>
@@ -107,7 +107,7 @@ const Header = () => {
                   onClick={() => scrollToSection("sobre")}
                   className="w-full text-left text-foreground dark:text-gray-300 hover:text-primary dark:hover:text-orange-500 transition-colors"
                 >
-                  Sobre
+                  About me
                 </button>
               </li>
               <li>
@@ -115,7 +115,7 @@ const Header = () => {
                   onClick={() => scrollToSection("experience")}
                   className="w-full text-left text-foreground dark:text-gray-300 hover:text-primary dark:hover:text-orange-500 transition-colors"
                 >
-                  Experiência
+                  Experiences
                 </button>
               </li>
               <li>
@@ -123,7 +123,7 @@ const Header = () => {
                   onClick={() => scrollToSection("projetos")}
                   className="w-full text-left text-foreground dark:text-gray-300 hover:text-primary dark:hover:text-orange-500 transition-colors"
                 >
-                  Projetos
+                  Projetcs
                 </button>
               </li>
               <li>
