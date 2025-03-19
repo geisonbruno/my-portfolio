@@ -8,7 +8,7 @@ const experiences = [
     company: "Flux Tecnologia",
     period: "Setembro 2023 - Dezembro 2024",
     description:
-      "Stack: Kotlin, SDK, Firebase, MySQL, NoSQL, Google play, Fastlane, Flavors, PHP, React.js, C#"
+      "Stack: Kotlin, SDK, Firebase, MySQL, NoSQL, Google play, Fastlane, Flavors, PHP, React.js, C#",
   },
 ];
 
@@ -61,8 +61,8 @@ const ExperienceSection = () => {
 
         <div className="max-w-3xl mx-auto">
           <div className="flex items-center mb-6 sm:mb-8">
-            <div className="p-3 sm:p-4 rounded-full bg-primary/10 dark:bg-orange-900/20 mr-3 sm:mr-4">
-              <Briefcase className="h-5 w-5 sm:h-6 sm:w-6 text-primary dark:text-orange-500" />
+            <div className="p-3 sm:p-4 rounded-full bg-primary/10 mr-3 sm:mr-4">
+              <Briefcase className="h-5 w-5 sm:h-6 sm:w-6 text-primary dark:text-white" />
             </div>
             <h3 className="text-xl sm:text-2xl font-bold dark:text-white">
               Professional Experience

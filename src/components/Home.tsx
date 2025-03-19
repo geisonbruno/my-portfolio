@@ -22,7 +22,7 @@ const Hero = () => {
       <div className="container mx-auto">
         <div className="text-left space-y-4 sm:space-y-6 max-w-3xl">
           <div className="flex items-center space-x-2">
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-lg text-sm font-semibold">
+            <span className="bg-orange-500 text-white dark:text-black px-3 py-1 rounded-lg text-sm font-semibold">
               Hello
             </span>
             <span className="text-lg font-medium dark:text-white">I'm</span>

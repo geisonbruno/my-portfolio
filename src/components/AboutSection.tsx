@@ -59,6 +59,7 @@ const AboutSection = () => {
                   window.open("http://github.com/geisonbruno", "_blank")
                 }
               >
+                {" "}
                 <Github size={18} />
                 GitHub
               </Button>
@@ -73,7 +74,10 @@ const AboutSection = () => {
       dark:bg-black dark:text-white
        transition-transform duration-300 hover:scale-110"
                 onClick={() =>
-                  window.open("https://linkedin.com/in/seu-usuario", "_blank")
+                  window.open(
+                    "https://www.linkedin.com/in/geison-bruno-ab4079224/",
+                    "_blank"
+                  )
                 }
               >
                 <Linkedin size={18} />
