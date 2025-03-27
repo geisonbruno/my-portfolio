@@ -6,17 +6,27 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const headerHeight = document.querySelector("header")?.offsetHeight || 80;
-      const elementPosition =
-        element.getBoundingClientRect().top + window.pageYOffset;
-      window.scrollTo({
-        top: elementPosition - headerHeight,
-        behavior: "smooth",
-      });
-    }
-    setIsMenuOpen(false);
+    setIsMenuOpen(false); // Fecha o menu imediatamente
+
+    // Pequeno delay para garantir que o menu fechou antes do scroll
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        // Obtém a altura atual do header (pode ser diferente em mobile)
+        const header = document.querySelector("header");
+        const headerHeight = header?.offsetHeight || 80;
+
+        // Calcula a posição considerando o layout atual
+        const elementPosition =
+          element.getBoundingClientRect().top + window.pageYOffset;
+
+        // Scroll com offset preciso
+        window.scrollTo({
+          top: elementPosition - headerHeight,
+          behavior: "smooth",
+        });
+      }
+    }, 50); // 50ms é suficiente para a transição do menu
   };
 
   return (
@@ -126,7 +136,7 @@ const Header = () => {
               </li>
               <li>
                 <button
-                  onClick={() => scrollToSection("projetos")}
+                  onClick={() => scrollToSection("projects")}
                   className="w-full text-left text-foreground dark:text-gray-300 hover:text-primary dark:hover:text-orange-500 transition-colors"
                 >
                   Projetcs
