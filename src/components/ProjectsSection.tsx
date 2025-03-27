@@ -140,7 +140,7 @@ const ProjectCard = ({ project }: { project: (typeof projects)[0] }) => {
 const ProjectsSection = () => {
   return (
     <section
-      id="projetos"
+      id="projects"
       className="py-16 sm:py-20 min-h-screen dark:bg-gray-900"
     >
       <div className="container mx-auto px-4">

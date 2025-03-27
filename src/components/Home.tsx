@@ -3,8 +3,8 @@ import { ArrowDown, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
-  const scrollToAbout = () => {
-    const element = document.getElementById("about");
+  const scrollToProjects = () => {
+    const element = document.getElementById("projects");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
@@ -44,7 +44,7 @@ const Hero = () => {
             style={{ animationDelay: "0.4s" }}
           >
             <Button
-              onClick={scrollToAbout}
+              onClick={scrollToProjects}
               className="group dark:bg-orange-500 dark:hover:bg-orange-500 w-full sm:w-auto text-sm sm:text-base
                transition-transform duration-300 hover:scale-110 shadow-lg"
             >
