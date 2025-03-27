@@ -14,66 +14,91 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 const projects = [
   {
     id: 1,
-    title: "API de Microserviços",
-    description:
-      "Sistema de microserviços desenvolvido com Spring Boot e Kotlin",
+    title: "Order System",
+    description: `
+      RESTFul API developed with Spring Boot, JPA and Hibernate. Applying good architectural practices, it
+implements complete CRUD, manages complex relationships and handles custom exceptions.
+The database started in H2 for testing and migrated to PostgreSQL in production,
+with final deployment on Heroku.
+    `,
     category: "backend",
-    image: "bg-primary/20 dark:bg-orange-900/30",
-    repoLink: "#",
+    image: "/img/project1.png",
+    repoLink: "https://github.com/geisonbruno/order-system",
   },
   {
     id: 2,
-    title: "Sistema de Autenticação",
-    description: "Implementação de autenticação segura com JWT e OAuth2",
+    title: "Softphone App",
+    description: `I worked as a developer, providing support for fixes, improvements and new features. We launched App 2.0, with a new UI/UX. Technologies used: Kotlin, Firebase,
+     SDK, Fastlane, Flavors, Google play console, Github Actions.`,
     category: "backend",
-    image: "bg-secondary/20 dark:bg-orange-800/30",
-    repoLink: "#",
-  },
-  {
-    id: 3,
-    title: "Biblioteca de Utilidades",
-    description: "Coleção de extensões e funções de utilidade em Kotlin",
-    category: "frontend",
-    image: "bg-muted dark:bg-gray-800",
-    repoLink: "#",
-  },
-  {
-    id: 4,
-    title: "API REST de Pagamentos",
-    description: "Sistema de processamento de pagamentos com Java e Spring",
-    category: "backend",
-    image: "bg-primary/10 dark:bg-orange-900/20",
-    repoLink: "#",
+    image: "/img/project2.png",
+    repoLink: "https://fluxvoip.com/softphone",
   },
   {
     id: 5,
-    title: "Framework de Testes",
-    description: "Framework para testes de integração e unitários em Java",
+    title: "Email Microservice",
+    description: `Initially, the microservice was configured to operate with Gmail SMTP, processing requests synchronously through a REST API. In order to expand my knowledge, it was evolved to a more scalable model, using AWS-SES for sending emails and RabbitMQ for asynchronous message processing.
+
+I had hands-on experience in this study project, evolving the email microservice from its initial configuration to its evolution to a scalable, event-driven model.`,
+    category: "backend",
+    image: "/img/project5.png",
+    repoLink: "https://github.com/geisonbruno/email-microservice",
+  },
+  {
+    id: 4,
+    title: "Mongodb Spring",
+    description: `
+      Project demonstrating how to use NoSQL in non-relational databases, focusing on the integration of MongoDB (NoSQL) with Spring Boot, exploring queries and document-oriented database design.`,
+    category: "backend",
+    image: "/img/project4.png",
+    repoLink: "https://github.com/geisonbruno/mongodb-spring",
+  },
+  {
+    id: 3,
+    title: "Challenge Columbus",
+    description: `Columbus Logistics is a web application developed for delivery and logistics control. This project was carried out as part of a technical test, using HTML, CSS, and JavaScript.
+
+The system has the following features:
+
+Dynamic graphs with delivery status visualization, with a database according to deliveries, in transit and delays.
+KPIs updated in real time.
+Detailed listing with sorting and filtering options.
+Responsive cards allowing editing or deletion.`,
     category: "frontend",
-    image: "bg-secondary/10 dark:bg-orange-800/20",
-    repoLink: "#",
+    image: "/img/project3.png",
+    repoLink: "https://github.com/geisonbruno/challenge-columbus",
   },
   {
     id: 6,
-    title: "CLI para DevOps",
+    title: "Singleton Pattern",
     description:
-      "Ferramenta de linha de comando para automação de tarefas DevOps",
+      "An example of how to implement Singleton Pattern. useful in many applications such as logging, driver objects, caching, thread pools, and database connections.",
     category: "backend",
-    image: "bg-muted/80 dark:bg-gray-700",
-    repoLink: "#",
+    image: "/img/project6.png",
+    repoLink: "https://github.com/geisonbruno/singleton-pattern",
   },
 ];
+console.log(projects);
 
 const ProjectCard = ({ project }: { project: (typeof projects)[0] }) => {
   return (
-    <Card className="overflow-hidden transition-all hover:shadow-lg hover:-translate-y-2 dark:bg-gray-800 dark:border-gray-700 shadow-lg">
-      <div
-        className={`h-36 sm:h-48 ${project.image} flex items-center justify-center`}
-      >
-        <span className="text-2xl sm:text-3xl font-bold text-primary/40 dark:text-orange-500/40">
-          {project.id}
-        </span>
-      </div>
+    <Card className="flex flex-col overflow-hidden transition-all hover:shadow-lg hover:-translate-y-2 dark:bg-gray-800 dark:border-gray-700 shadow-lg">
+      {project.image.startsWith("/img/") ? (
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-36 sm:h-48 object-cover"
+        />
+      ) : (
+        <div
+          className={`h-36 sm:h-48 ${project.image} flex items-center justify-center`}
+        >
+          <span className="text-2xl sm:text-3xl font-bold text-primary/40 dark:text-orange-500/40">
+            {project.id}
+          </span>
+        </div>
+      )}
+
       <CardHeader className="p-3 sm:p-4">
         <CardTitle className="text-base sm:text-lg dark:text-white">
           {project.title}
@@ -82,20 +107,31 @@ const ProjectCard = ({ project }: { project: (typeof projects)[0] }) => {
           {project.category}
         </CardDescription>
       </CardHeader>
-      <CardContent className="p-3 sm:p-4 pt-0">
+
+      {/* Adicionando flex-grow para empurrar o CardFooter para o final */}
+      <CardContent className="p-3 sm:p-4 pt-0 flex-grow">
         <p className="text-xs sm:text-sm text-muted-foreground dark:text-gray-300">
           {project.description}
         </p>
       </CardContent>
-      <CardFooter className="p-3 sm:p-4">
-        <Button
-          variant="outline"
-          size="sm"
-          className="w-full text-xs sm:text-sm dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-700"
+
+      {/* Mantém o botão sempre na parte inferior */}
+      <CardFooter className="p-3 sm:p-4 mt-auto">
+        <a
+          href={project.repoLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full"
         >
-          <Github className="mr-2 h-3 w-3 sm:h-4 sm:w-4" />
-          Código
-        </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            className="w-full text-xs sm:text-sm dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-700"
+          >
+            <Github className="mr-2 h-3 w-3 sm:h-4 sm:w-4" />
+            See project
+          </Button>
+        </a>
       </CardFooter>
     </Card>
   );

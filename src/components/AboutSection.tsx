@@ -22,7 +22,7 @@ const AboutSection = () => {
               >
                 <div className="absolute inset-0 from-primary/10 to-secondary/20 mix-blend-overlay "></div>
                 <img
-                  src="/src/img/eu.png"
+                  src="/img/eu.png"
                   alt="Minha Foto"
                   className="w-full h-full object-cover scale-120 "
                 />

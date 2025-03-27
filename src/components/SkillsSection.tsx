@@ -19,6 +19,8 @@ import {
   SiJunit5,
   SiHackthebox,
   SiGithubactions,
+  SiDocker,
+  SiRabbitmq,
 } from "react-icons/si";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -78,6 +80,10 @@ const skillCategories = [
         logo: <SiApachemaven className="h-6 w-6 sm:h-8 sm:w-8" />,
       },
       {
+        name: "RabbitMQ",
+        logo: <SiRabbitmq className="h-6 w-6 sm:h-8 sm:w-8" />,
+      },
+      {
         name: "CI/CD",
         logo: <SiGithubactions className="h-6 w-6 sm:h-8 sm:w-8" />,
       },
@@ -87,6 +93,7 @@ const skillCategories = [
         logo: <SiGoogleplay className="h-6 w-6 sm:h-8 sm:w-8" />,
       },
       { name: "Figma", logo: <SiFigma className="h-6 w-6 sm:h-8 sm:w-8" /> },
+      { name: "Docker", logo: <SiDocker className="h-6 w-6 sm:h-8 sm:w-8" /> },
     ],
   },
   {

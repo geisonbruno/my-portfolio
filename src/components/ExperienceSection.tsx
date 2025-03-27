@@ -8,7 +8,7 @@ const experiences = [
     company: "Flux Tecnologia",
     period: "Setembro 2023 - Dezembro 2024",
     description:
-      "Stack: Kotlin, SDK, Firebase, MySQL, NoSQL, Google play, Fastlane, Flavors, PHP, React.js, C#",
+      "Stack: Kotlin, SDK, Firebase, MySQL, NoSQL, Google play, Fastlane, Flavors, PHP, React.js, Github Actions",
   },
 ];
 
